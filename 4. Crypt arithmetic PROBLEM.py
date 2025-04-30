@@ -4,7 +4,7 @@ def solve():
     letters = 'SENDMORY'
     for p in permutations(range(10), len(letters)):
         s, e, n, d, m, o, r, y = p
-        if s == 0 or m == 0:  # No leading zeros
+        if s == 0 or m == 0: 
             continue
         send = 1000*s + 100*e + 10*n + d
         more = 1000*m + 100*o + 10*r + e
