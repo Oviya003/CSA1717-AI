@@ -1,0 +1,13 @@
+is_vowel(X) :- member(X, [a,e,i,o,u]).
+
+count_vowels([], 0).
+count_vowels([H|T], Count) :-
+    is_vowel(H),
+    count_vowels(T, Rest),
+    Count is Rest + 1.
+
+count_vowels([H|T], Count) :-
+    \+ is_vowel(H),
+    count_vowels(T, Count).
+
+% Query: ?- count_vowels([a,b,c,e,o], Count).
