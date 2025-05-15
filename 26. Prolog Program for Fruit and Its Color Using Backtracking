@@ -1,0 +1,6 @@
+fruit(apple, red).
+fruit(banana, yellow).
+fruit(grape, purple).
+
+% Query to get fruit by color:
+% ?- fruit(Name, red).
