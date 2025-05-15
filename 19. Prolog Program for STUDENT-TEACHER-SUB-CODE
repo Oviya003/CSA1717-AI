@@ -1,0 +1,9 @@
+teaches(mr_smith, math, 101).
+teaches(ms_lee, physics, 102).
+student(john, math, 101).
+student(susan, physics, 102).
+
+% Query students under a teacher
+student_of_teacher(Student, Teacher) :-
+    teaches(Teacher, Subject, Code),
+    student(Student, Subject, Code).
