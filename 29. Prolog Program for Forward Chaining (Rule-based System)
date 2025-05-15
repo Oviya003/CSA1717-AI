@@ -1,0 +1,9 @@
+:- dynamic known/1.
+
+rule :- known(rain), \+ known(wet), assert(known(wet)).
+rule :- known(wet), \+ known(cloudy), assert(known(cloudy)).
+
+forward :- rule, fail.
+forward.
+
+?- assert(known(rain)), forward, listing(known).
