@@ -1,0 +1,10 @@
+symptom(john, fever).
+symptom(john, cough).
+symptom(jane, headache).
+
+disease(john, flu) :-
+    symptom(john, fever),
+    symptom(john, cough).
+
+disease(jane, migraine) :-
+    symptom(jane, headache).
