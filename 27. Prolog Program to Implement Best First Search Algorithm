@@ -1,0 +1,23 @@
+:- dynamic edge/3, heuristic/2.
+
+edge(a, b, 1).
+edge(a, c, 3).
+edge(b, d, 3).
+edge(c, d, 1).
+
+heuristic(b, 4).
+heuristic(c, 2).
+heuristic(d, 0).
+
+best_first(Start, Goal, Path) :-
+    bfs([[Start]], Goal, RevPath),
+    reverse(RevPath, Path).
+
+bfs([[Goal|T]|_], Goal, [Goal|T]).
+bfs([Path|Rest], Goal, NewPath) :-
+    Path = [Current|_],
+    findall([Next,Current|Path],
+            (edge(Current, Next, _), \+ member(Next, Path)),
+            Children),
+    append(Rest, Children, NewQueue),
+    bfs(NewQueue, Goal, NewPath).
