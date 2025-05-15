@@ -1,0 +1,10 @@
+at(monkey, room).
+at(banana, ceiling).
+has(monkey, nothing).
+can_climb(monkey).
+
+get_banana :-
+    at(monkey, room),
+    at(banana, ceiling),
+    can_climb(monkey),
+    write('Monkey climbs and gets the banana').
