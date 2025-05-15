@@ -1,0 +1,5 @@
+cloudy :- wet.
+wet :- rain.
+rain.
+
+% Query: ?- cloudy.
