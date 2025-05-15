@@ -1,0 +1,10 @@
+planet(mercury, 0.39).
+planet(venus, 0.72).
+planet(earth, 1.00).
+planet(mars, 1.52).
+planet(jupiter, 5.20).
+
+% Query planets > 1 AU
+far_planet(Name) :-
+    planet(Name, Distance),
+    Distance > 1.
